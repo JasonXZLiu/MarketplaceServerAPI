@@ -33,7 +33,9 @@ After I finished making the marketplace functional for a user, I wanted the web 
 
 Now, I ran into another problem. The application wasn't thread safe. To make sure it was, I first made sure that the necessary methods and properties were locked to enforce data consistency (by adding a synchronized block). Mostly, this would be done for the inventory count to ensure that two users cannot buy the same product at the exact same time (so if the inventory count was 1, then only one user would be able to purchase that one product). Yay, another problem solved!
 
-One of the last problems was the lack of a database. Thus, I needed to make the market/list of products static (to restrict the application to having only one isntance of it). And after it was all done, I added automated unit tests in maven to validate business logic and HTTPResponses.
+One of the features that I added to each cart was a timestamp. So, every time a new user enters the marketplace, CartLocatorService determines if any users have abandoned (not updated) their carts in the last 30 minutes. If so, then their cart is deleted. This helps us serve more users by saving memory.
+
+One of the last problems was the lack of a database. Thus, I needed to make the market/list of products static (to restrict the application to having only one instance of it). And after it was all done, I added automated unit tests in maven to validate business logic and HTTPResponses.
 
 ### Model Structure
 
