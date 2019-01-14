@@ -2,14 +2,14 @@
 
 ## Overview
 
-A server side web API for an online marketplace. Created in Java using Spring Boot.
+A server-side web API for an online marketplace. Created in Java using Spring Boot.
 
 Some key features that were implemented include:
 
-* REST archietecutural structure
+* REST architectural structure
 * concurrency compatibility by creating independent carts for each user
 * synchronized blocks for purchasing items to avoid the race condition
-* made the application loosely coupled, extendable and adaptable by creating multiple interface with implementation classes and utilizing the IoC container provided by Spring
+* made the application loosely coupled, extendable and adaptable by creating multiple interfaces with implementation classes and utilizing the IoC container provided by Spring
 * unit tests through JUnit
 
 ## Prerequisites
@@ -21,21 +21,21 @@ Some key features that were implemented include:
 
 ### Framework Choice
 
-I chose Spring Boot to tackle this challenge as the framework offers a lot of functionality including IoCs and a automatic Tomcat Server on startup.
+I chose Spring Boot to tackle this challenge as the framework offers a lot of functionality including IoCs and an automatic Tomcat Server on startup.
 
 ### Application Structure
 
-At first, I created a more bare-bones application using just a Product, Market and some Controller classes, just ading on the basic functionality that a marketplace has. After I got that to work, I added in additional features including a shopping cart so that users could add and buy multiple products at a time. I also designed Service interfaces and implementations to refine the programs structure and allow for flexbility and scalibility. These services only focused on one specific model and helped to ensure low coupling between classes. It also helps later on when adding a database implementation. At this point, I also separated the MarketController and added a MarketAdminController here to follow the Single Responsibility Principle. This was because only vendors should have access/the ability to edit their products on the market.
+At first, I created a more bare-bones application using just a Product, Market and some Controller classes, just adding on the basic functionality that a marketplace has. After I got that to work, I added in additional features including a shopping cart so that users could add and buy multiple products at a time. I also designed Service interfaces and implementations to refine the program's structure and allow for flexibility and scalability. These services only focused on one specific model and helped to ensure low coupling between classes. It also helps later on when adding a database implementation. At this point, I also separated the MarketController and added a MarketAdminController here to follow the Single Responsibility Principle. This was because only vendors should have access/the ability to edit their products on the market.
 
 ### Concurrency
 
 After I finished making the marketplace functional for a user, I wanted the web API to work for multiple users, each with their own carts. Because the REST application should be stateless, I added in a CartLocatorService to keep track of users and their instance of the cart. However, because there is no client-side, I could not send back Authentication Tokens through the HTML header. Thus, I had to add in the userIds in the URL itself.
 
-Now, I ran into another problem. The application wasn't thread safe. To make sure it was, I first made sure that the necessary methods and properties were locked to enforce data consistency (by adding a synchronized block). Mostly, this would be done for the inventory count to ensure that two users cannot buy the same product at the exact same time (so if the inventory count was 1, then only one user would be able to purchase that one product). Yay, another problem solved!
+Now, I ran into another problem. The application wasn't thread-safe. To make sure it was, I first made sure that the necessary methods and properties were locked to enforce data consistency (by adding a synchronized block). Mostly, this would be done for the inventory count to ensure that two users cannot buy the same product at the same time (so if the inventory count was 1, then only one user would be able to purchase that one product). Yay, another problem solved!
 
 One of the features that I added to each cart was a timestamp. So, every time a new user enters the marketplace, CartLocatorService determines if any users have abandoned (not updated) their carts in the last 30 minutes. If so, then their cart is deleted. This helps us serve more users by saving memory.
 
-One of the last problems was the lack of a database. Thus, I needed to make the market/list of products static (to restrict the application to having only one instance of it). And after it was all done, I added automated unit tests in maven to validate business logic and HTTPResponses.
+One of the last problems was the lack of a database. Thus, I needed to make the market/list of products static (to restrict the application to have only one instance of it). And after it was all done, I added automated unit tests in maven to validate business logic and HTTPResponses.
 
 ### Model Structure
 
