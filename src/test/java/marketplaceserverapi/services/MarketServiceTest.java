@@ -2,6 +2,7 @@ package marketplaceserverapi.services;
 
 import marketplaceserverapi.implementations.MarketServiceImpl;
 import marketplaceserverapi.model.Product;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -11,6 +12,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 public class MarketServiceTest {
+
+    @AfterEach
+    public void deleteAddedProduct() throws IOException, InvalidKeyException {
+        MarketService marketService = new MarketServiceImpl();
+        marketService.deleteProduct("Test_Shopify");
+    }
 
     @Test
     public void givenProductToAddToMarket_whenProductIsAddedToMarket_thenNewMarketWithProductIsReceived() throws IOException, InvalidKeyException {

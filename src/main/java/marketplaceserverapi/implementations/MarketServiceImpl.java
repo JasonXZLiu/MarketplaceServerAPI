@@ -86,9 +86,7 @@ public class MarketServiceImpl implements MarketService {
     }
 
     public Product deleteProduct(String stringId) throws InvalidKeyException {
-        Product product = getProductByTitle(stringId);
-        market.remove(product);
-        return product;
+        return market.remove(stringId);
     }
 
     public Collection<Product> getCollection() {

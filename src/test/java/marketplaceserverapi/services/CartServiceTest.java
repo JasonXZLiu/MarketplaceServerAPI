@@ -1,8 +1,10 @@
 package marketplaceserverapi.services;
 
+import marketplaceserverapi.implementations.CartLocatorServiceImpl;
 import marketplaceserverapi.implementations.CartServiceImpl;
 import marketplaceserverapi.implementations.MarketServiceImpl;
 import marketplaceserverapi.model.Cart;
+import org.junit.After;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -12,6 +14,12 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CartServiceTest {
+
+    @After
+    public void deleteAddedUser() throws IOException, InvalidKeyException {
+        CartLocatorService cartLocatorService = new CartLocatorServiceImpl();
+        cartLocatorService.getCartByUserId("1").clear();
+    }
 
     @Test
     public void givenProductTitleAndNumberToAddToCart_whenProductsAreAddedToCart_thenNewCartWithCorrectTotalPriceIsReceived() throws IOException, InvalidKeyException {

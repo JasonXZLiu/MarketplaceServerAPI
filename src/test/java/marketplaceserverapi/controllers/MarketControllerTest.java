@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class MarketControllerTest {
 
     @Test
-    public void givenProductToFind_whenProductTitleIsRetrieved_thenProductInfoIsReceived() throws IOException {
+    public void givenProductToFind_whenProductTitleIsRetrieved_then500IsReceived() throws IOException {
         // Given
         String title = "hello";
         HttpUriRequest request = new HttpGet( "http://localhost:8080/market/" + title );
