@@ -98,7 +98,3 @@ All API calls are returned as JSON objects.
 * adding more functionality to support more API calls
 * creating and implementing User and Vendor classes
 * added security through authentication tokens for adding, removing or updating produce on the market
-
-## Reflection
-
-Wow, this was hard but I learned a lot and ad tons of fun along the way. Thanks for the challenge Shopify! :D
