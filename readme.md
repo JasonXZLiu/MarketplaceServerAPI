@@ -22,7 +22,11 @@ I chose Spring Boot to tackle this challenge as the framework offers a lot of fu
 
 At first, I created a more bare-bones application using just a Product, Market and some Controller classes, just adding on the basic functionality that a marketplace has. After I got that to work, I added in additional features including a shopping cart so that users could add and buy multiple products at a time. I also designed Service interfaces and implementations to refine the program's structure and allow for flexibility and scalability. These services only focused on one specific model and helped to ensure low coupling between classes. It also helps later on when adding a database implementation. At this point, I also separated the MarketController and added a MarketAdminController here to follow the Single Responsibility Principle. This was because only vendors should have access/the ability to edit their products on the market.
 
+Whew, the basic structures done now.
+
 ### Concurrency
+
+Improvement time!!
 
 After I finished making the marketplace functional for a user, I wanted the web API to work for multiple users, each with their own carts. Because the REST application should be stateless, I added in a CartLocatorService to keep track of users and their instance of the cart. However, because there is no client-side, I could not send back Authentication Tokens through the HTML header. Thus, I had to add in the userIds in the URL itself.
 
