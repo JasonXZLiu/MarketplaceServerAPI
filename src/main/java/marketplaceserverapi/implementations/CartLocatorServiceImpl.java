@@ -61,7 +61,7 @@ public final class CartLocatorServiceImpl implements CartLocatorService {
 
     /**
      * Attempt to give users (who do not have a unique id) an AnonymousAuthenticationToken
-     * to maintain a user's cart and allow for concurrency.
+     * to maintain a user's cart and allow for multiple threads.
      */
 //    public Cart getCartByUser() throws IOException, InvalidKeyException {
 //        String uId = handleAuthentication();
