@@ -12,11 +12,6 @@ Some key features that were implemented include:
 * made the application loosely coupled, extendable and adaptable by creating multiple interfaces with implementation classes and utilizing the IoC container provided by Spring
 * unit tests through JUnit
 
-## Prerequisites
-
-* Java 8
-* Maven 3
-
 ## Thought Process
 
 ### Framework Choice
@@ -54,6 +49,11 @@ Note: the product's title is used as the unique key.
         boolean completed
         LocalDateTime lastTouched
     }
+
+## Prerequisites
+
+* Java 8
+* Maven 3
 
 ## Build
 
