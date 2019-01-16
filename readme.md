@@ -12,6 +12,8 @@ Some key features that were implemented include:
 * made the application loosely coupled, extendable and adaptable by creating multiple interfaces with implementation classes and utilizing the IoC container provided by Spring
 * unit tests through JUnit
 
+[Check out how to use the application](#prerequisites)
+
 ## Thought Process
 
 ### Framework Choice
