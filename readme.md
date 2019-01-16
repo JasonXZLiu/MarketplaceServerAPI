@@ -14,6 +14,8 @@ Some key features that were implemented include:
 
 [Check out how to use the application](#prerequisites)
 
+[Initial market data](https://github.com/JasonXZLiu/MarketplaceServerAPI/blob/master/marketData.json)
+
 ## Thought Process
 
 ### Framework Choice
