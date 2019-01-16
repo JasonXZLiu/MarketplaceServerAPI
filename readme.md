@@ -44,7 +44,7 @@ Note: the product's title is used as the unique key.
 
 Whew, the basic structure is done now.
 
-### Improvement time!!
+### Improvement time!! (Multi-threading)
 
 After I finished making the marketplace functional for a user, I wanted the web API to work for multiple users, each with their own carts. Because the REST application should be stateless, I added in a CartLocatorService to keep track of users and their instance of the cart. However, because there is no client-side, I could not send back Authentication Tokens through the HTML header. Thus, I had to add in the userIds in the URL itself.
 
