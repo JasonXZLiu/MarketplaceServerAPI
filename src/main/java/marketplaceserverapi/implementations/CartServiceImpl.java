@@ -1,7 +1,7 @@
 package marketplaceserverapi.implementations;
 
-import marketplaceserverapi.model.Cart;
-import marketplaceserverapi.model.Product;
+import marketplaceserverapi.models.Cart;
+import marketplaceserverapi.models.Product;
 import marketplaceserverapi.services.CartService;
 import marketplaceserverapi.services.MarketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.security.InvalidKeyException;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * CartServiceImpl provides an implementation of CartService.
@@ -51,9 +53,21 @@ public final class CartServiceImpl implements CartService {
         return cart.removeFromCart(findProductOnMarket(productTitle), Integer.parseInt(num));
     }
 
-    public Cart checkOutProducts(Cart cart) {
+    public void confirmTotalPrice(Cart cart) {
+        double totalPrice = 0;
+        ConcurrentMap<String, Product> productMap = marketService.getAllProducts();
+        for (Map.Entry<String, Integer> item : cart.getItems().entrySet()) {
+            Product product = productMap.get(item.getKey());
+            if (product == null) throw new IllegalStateException(item.getKey() + " does not exist on the market anymore.");
+            totalPrice += item.getValue() * product.getPrice();
+        }
+        if (cart.getTotalPrice() != totalPrice) throw new IllegalStateException("A product's price was updated while you tried to purchase. Please re-add the products to your cart.");
+    }
+
+    public synchronized Cart checkOutCart(Cart cart) throws InvalidKeyException {
         Cart purchased = cart.clone();
-        HashMap<Product, Integer> items = cart.getItems();
+        HashMap<String, Integer> items = cart.getItems();
+        confirmTotalPrice(cart);
         if (!marketService.finalizePurchase(items)) return cart;
         cart.clear();
         purchased.setCompleted(true);

@@ -1,12 +1,12 @@
 package marketplaceserverapi.implementations;
 
-import marketplaceserverapi.model.InitialMarketData;
-import marketplaceserverapi.model.Product;
+import marketplaceserverapi.models.Product;
+import marketplaceserverapi.repositories.ProductRepository;
 import marketplaceserverapi.services.MarketService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,108 +16,126 @@ import java.util.concurrent.ConcurrentMap;
  * MarketServiceImpl provides an implementation of MarketService.
  * MarketServiceImpl stores a list of products offered on the market.
  *
- * Note: MarketService has a static ConcurrentMap as a marketplace
- * should only have one instance of market (only one list of products).
+ * This implementation uses the ProductRepository to CRUD entities in
+ * memory database (H2).
  *
- * Also note: In the future, this implementation will be replaced with
- * a database.
+ * Note: In the previous version, MarketService was implemented by a static
+ * ConcurrentMap as a marketplace should only have one instance of market
+ * (only one list of products).
  *
  * @author Jason Liu
  */
 @Service
 @Qualifier("marketService")
 public class MarketServiceImpl implements MarketService {
-    private static ConcurrentMap<String, Product> market;
+    @Autowired
+    private ProductRepository productRepository;
 
-    public MarketServiceImpl() throws IOException, InvalidKeyException {
-        initialProducts();
+    public MarketServiceImpl() {
+
     }
 
-    public void initialProducts() throws IOException, InvalidKeyException {
-        if (market == null) {
-            market = new ConcurrentHashMap<>();
-            addProducts(new InitialMarketData().getProducts());
-        }
+    public MarketServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
-    public Collection<Product> getMarket() {
-        return market.values();
+    public List<Product> getMarket() {
+        List<Product> productList = new ArrayList<>();
+        productRepository.findAll().forEach(productList::add);
+        return productList;
     }
 
-    public Product getProductByTitle(String stringId) throws InvalidKeyException {
-        if (market.containsKey(stringId)) return market.get(stringId);
-        throw new InvalidKeyException(stringId + " does not exist on the market");
+    public Product getProductByTitle(String productId) throws InvalidKeyException {
+        List<Product> products = productRepository.findByTitleIgnoreCase(productId);
+        if (products == null || products.size() == 0)  return null;
+        return products.get(0);
     }
 
     public boolean containsProduct(Product product) {
-        return market.containsKey(product.getTitle());
+        List<Product> products = productRepository.findByTitleIgnoreCase(product.getTitle());
+        return products != null && products.size() > 0;
     }
 
     public void addProduct(Product product) throws InvalidKeyException {
-        if (containsProduct(product)) throw new InvalidKeyException(product.getTitle() + " already exists on the market.");
-        else market.put(product.getTitle(), product);
+        if (containsProduct(product))  updateProduct(product.getTitle(),product);
+        productRepository.save(product);
     }
 
     public Collection<Product> addProducts(Product[] products) throws InvalidKeyException {
-        for (Product product : products) {
-            addProduct(product);
-        }
-        return market.values();
+        addProducts(Arrays.asList(products));
+        return getMarket();
     }
 
     public Collection<Product> addProducts(List<Product> products) throws InvalidKeyException {
         for (Product product : products) {
             addProduct(product);
         }
-        return market.values();
+        return getMarket();
     }
 
-    public Product updateProduct(String stringId, Product product) throws InvalidKeyException {
-        return getProductByTitle(stringId).update(product);
+    public Product updateProduct(String productId, Product product) throws InvalidKeyException {
+        if (getProductByTitle(productId) != null) return productRepository.save(product);
+        throw new InvalidKeyException(productId + " does not yet exist on the market.");
     }
 
     public List<Product> getAvailable() {
-        List<Product> res = new ArrayList<Product>();
-        for (Map.Entry<String, Product> map : market.entrySet()) {
-            if (map.getValue().checkAvailable(0))
-                res.add(map.getValue());
+        List<Product> result = new ArrayList<>();
+        for (Product product : productRepository.findAll()) {
+            if (product.checkAvailable(1))
+                result.add(product);
         }
-        return res;
+        return result;
     }
 
-    public Product deleteProduct(String stringId) throws InvalidKeyException {
-        return market.remove(stringId);
+    public Product deleteProduct(String productId) throws InvalidKeyException {
+        Product product = getProductByTitle(productId);
+        if (product == null) return null;
+        productRepository.delete(product);
+        return product;
     }
 
-    public Collection<Product> getCollection() {
+    public List<Product> getCollection() {
         return getMarket();
+    }
+
+    public ConcurrentMap<String, Product> getAllProducts() {
+        List<Product> products = getMarket();
+        ConcurrentMap<String, Product> map = new ConcurrentHashMap<>();
+        for (Product product : products) {
+            map.put(product.getTitle(), product);
+        }
+        return map;
     }
 
     public Collection<Product> getAvailableCollection() {
         return getAvailable();
     }
 
-    public boolean checkPurchase(HashMap<Product, Integer> items) {
-        for (Map.Entry<Product, Integer> item : items.entrySet()) {
-            if (!item.getKey().checkAvailable(Math.max(0, item.getValue())))
-                return false;
-                // throw new IllegalArgumentException(item.getKey().getTitle() + " is sold out");
+    public boolean checkPurchase(HashMap<String, Integer> items) throws InvalidKeyException {
+        for (Map.Entry<String, Integer> item : items.entrySet()) {
+            Product product = getProductByTitle(item.getKey());
+            if (product == null) return false;
+            if (!product.checkAvailable(Math.max(0, item.getValue()))) return false;
         }
         return true;
     }
 
-    public synchronized boolean finalizePurchase(HashMap<Product, Integer> items) throws IllegalArgumentException {
+    public synchronized boolean finalizePurchase(HashMap<String, Integer> items) throws IllegalArgumentException, InvalidKeyException {
         if (!checkPurchase(items)) return false;
-        for (Map.Entry<Product, Integer> item : items.entrySet()) {
-            item.getKey().decrementInventoryCount(item.getValue());
+        List<Product> products = new ArrayList<>();
+        for (Map.Entry<String, Integer> item : items.entrySet()) {
+            Product product = getProductByTitle(item.getKey()).decrementInventoryCount(item.getValue());
+            products.add(product);
         }
+        productRepository.saveAll(products);
         return true;
     }
 
-    public synchronized Product purchaseProduct(String stringId) throws IllegalArgumentException, InvalidKeyException {
-        HashMap<Product, Integer> item = new HashMap<>();
-        Product product = getProductByTitle(stringId);
-        item.put(product, 1);
+    public synchronized Product purchaseProduct(String productId) throws IllegalArgumentException, InvalidKeyException {
+        HashMap<String, Integer> item = new HashMap<>();
+        Product product = getProductByTitle(productId);
+        if (product == null) return null;
+        item.put(productId, 1);
         if (finalizePurchase(item)) return product;
         return null;
     }

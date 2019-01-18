@@ -1,7 +1,7 @@
 package marketplaceserverapi.services;
 
 import marketplaceserverapi.implementations.CartLocatorServiceImpl;
-import marketplaceserverapi.model.Cart;
+import marketplaceserverapi.models.Cart;
 import org.junit.After;
 import org.junit.jupiter.api.Test;
 

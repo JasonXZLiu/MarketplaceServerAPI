@@ -1,14 +1,13 @@
+marketplaceserverapi\repositories\ProductRepository.class
 marketplaceserverapi\controllers\MarketAdminController.class
-marketplaceserverapi\model\Cart.class
-marketplaceserverapi\model\Product.class
+marketplaceserverapi\models\Cart.class
 marketplaceserverapi\Application.class
-marketplaceserverapi\model\InitialMarketData.class
 marketplaceserverapi\implementations\CartServiceImpl.class
 marketplaceserverapi\services\CartLocatorService.class
 marketplaceserverapi\services\MarketService.class
 marketplaceserverapi\implementations\CartLocatorServiceImpl.class
-marketplaceserverapi\model\ProductMapToArraySerializer.class
 marketplaceserverapi\implementations\MarketServiceImpl.class
+marketplaceserverapi\models\Product.class
 marketplaceserverapi\controllers\MarketController.class
 marketplaceserverapi\controllers\CartController.class
 marketplaceserverapi\services\CartService.class

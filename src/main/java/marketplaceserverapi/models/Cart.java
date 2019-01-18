@@ -1,6 +1,4 @@
-package marketplaceserverapi.model;
-
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+package marketplaceserverapi.models;
 
 import java.security.InvalidParameterException;
 import java.time.LocalDateTime;
@@ -11,9 +9,9 @@ import java.util.Map;
  * Cart contains cart data. Each cart has:
  *   String id         - a unique id (too differentiate between carts
  *   double totalPrice - in dollars
- *   HashMap<Product, Integer> items - a map of items in the cart where
- *                                     Product represents the product and
- *                                     Integer is the number of each product in the cart
+ *   HashMap<String, Integer> items - a map of items in the cart where
+ *                                    String represents the product's title and
+ *                                    Integer is the number of each product in the cart
  *   boolean completed - a flag to keep track of which carts have already been purchased
  *   LocalDateTime lastTouched - a time to determine abandoned carts
  *
@@ -25,12 +23,7 @@ import java.util.Map;
 public class Cart {
     private String id;
     private double totalPrice;
-    /**
-     * HashMap requires a unique serialization method to avoid passing
-     * back the product's references.
-     */
-    @JsonSerialize(using = ProductMapToArraySerializer.class)
-    private HashMap<Product, Integer> items;
+    private HashMap<String, Integer> items;
     private boolean completed;
     private LocalDateTime lastTouched;
 
@@ -46,11 +39,11 @@ public class Cart {
         this.id = id;
     }
 
-    public HashMap<Product, Integer> getItems() {
+    public HashMap<String, Integer> getItems() {
         return items;
     }
 
-    public void setItems(HashMap<Product, Integer> items) {
+    public void setItems(HashMap<String, Integer> items) {
         this.items = items;
     }
 
@@ -83,9 +76,9 @@ public class Cart {
         return this;
     }
 
-    private Product getProductFromCart(String productTitle) {
-        for (Map.Entry<Product, Integer> item : items.entrySet()) {
-            if (item.getKey().getTitle().equals(productTitle)) return item.getKey();
+    private String getProductTitleFromCart(String productTitle) {
+        for (Map.Entry<String, Integer> item : items.entrySet()) {
+            if (item.getKey().equalsIgnoreCase(productTitle)) return item.getKey();
         }
         return null;
     }
@@ -96,22 +89,22 @@ public class Cart {
 
     public Cart addToCart(Product product, int num) throws InvalidParameterException {
         if (num <= 0) throw new InvalidParameterException("Number of products to purchase must be positive: " + num);
-        items.put(product, items.getOrDefault(product, 0) + num);
+        items.put(product.getTitle(), items.getOrDefault(product.getTitle(), 0) + num);
         adjustTotalPrice(product.getPrice() * num);
         return this;
     }
 
     public Cart removeFromCart(Product product, int num) {
-        if (getProductFromCart(product.getTitle()) == null) return this;
+        if (getProductTitleFromCart(product.getTitle()) == null) return this;
 
         if (num <= 0) throw new InvalidParameterException("Number of products to remove must be positive: " + num);
-        if (items.get(product) <= num) {
-            adjustTotalPrice(-items.get(product) * product.getPrice());
-            items.remove(product);
+        if (items.get(product.getTitle()) <= num) {
+            adjustTotalPrice(-items.get(product.getTitle()) * product.getPrice());
+            items.remove(product.getTitle());
         }
         else {
             adjustTotalPrice(-num * product.getPrice());
-            items.put(product, items.get(product) - num);
+            items.put(product.getTitle(), items.get(product.getTitle()) - num);
         }
         return this;
     }
@@ -125,7 +118,7 @@ public class Cart {
     public Cart clone() {
         Cart clone = new Cart();
         clone.totalPrice = this.totalPrice;
-        for (Map.Entry<Product, Integer> item : items.entrySet()) {
+        for (Map.Entry<String, Integer> item : items.entrySet()) {
             clone.items.put(item.getKey(), item.getValue());
         }
         clone.id = this.id;

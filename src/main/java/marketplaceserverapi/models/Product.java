@@ -1,4 +1,8 @@
-package marketplaceserverapi.model;
+package marketplaceserverapi.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Product contains product data. Each product has:
@@ -13,9 +17,13 @@ package marketplaceserverapi.model;
  *
  * @author Jason Liu
  */
+@Entity
 public class Product {
+
+    @Id
     private String title;
     private double price;
+    @Column(name = "inventorycount")
     private int inventoryCount;
 
     public Product() {}
@@ -59,9 +67,10 @@ public class Product {
         decrementInventoryCount(1);
     }
 
-    public synchronized void decrementInventoryCount(int num) throws IllegalArgumentException {
+    public synchronized Product decrementInventoryCount(int num) throws IllegalArgumentException {
         checkAvailable(num);
         inventoryCount -= num;
+        return this;
     }
 
     public Product update(Product product) {

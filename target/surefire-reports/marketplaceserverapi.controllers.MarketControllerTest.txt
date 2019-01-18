@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: marketplaceserverapi.controllers.MarketControllerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.454 s - in marketplaceserverapi.controllers.MarketControllerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.039 s - in marketplaceserverapi.controllers.MarketControllerTest

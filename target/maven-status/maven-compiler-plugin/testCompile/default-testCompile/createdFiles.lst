@@ -1,4 +1,5 @@
 marketplaceserverapi\services\MarketServiceTest.class
+marketplaceserverapi\controllers\MarketAdminControllerTest.class
 marketplaceserverapi\controllers\MarketControllerTest.class
 marketplaceserverapi\controllers\CartControllerTest.class
 marketplaceserverapi\services\CartServiceTest.class

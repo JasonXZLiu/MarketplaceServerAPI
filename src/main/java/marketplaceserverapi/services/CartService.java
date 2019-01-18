@@ -1,7 +1,7 @@
 package marketplaceserverapi.services;
 
-import marketplaceserverapi.model.Cart;
-import marketplaceserverapi.model.Product;
+import marketplaceserverapi.models.Cart;
+import marketplaceserverapi.models.Product;
 
 import java.security.InvalidKeyException;
 
@@ -25,5 +25,5 @@ public interface CartService {
 
     Cart removeFromCart(Cart cart, String productTitle, String num) throws InvalidKeyException;
 
-    Cart checkOutProducts(Cart cart);
+    Cart checkOutCart(Cart cart) throws InvalidKeyException;
 }

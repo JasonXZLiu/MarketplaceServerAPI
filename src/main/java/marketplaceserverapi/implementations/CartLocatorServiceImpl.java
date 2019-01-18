@@ -1,6 +1,6 @@
 package marketplaceserverapi.implementations;
 
-import marketplaceserverapi.model.Cart;
+import marketplaceserverapi.models.Cart;
 import marketplaceserverapi.services.CartLocatorService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -51,7 +51,7 @@ public final class CartLocatorServiceImpl implements CartLocatorService {
         Queue<String> toRemove = new LinkedList<>();
         LocalDateTime now = LocalDateTime.now();
         for (Map.Entry<String, Cart> entry : userCarts.entrySet()) {
-            if (entry.getValue().getLastTouched().until(now, ChronoUnit.MINUTES) > 1)
+            if (entry.getValue().getLastTouched().until(now, ChronoUnit.MINUTES) > 30)
                 toRemove.add(entry.getKey());
         }
         while (!toRemove.isEmpty()) {

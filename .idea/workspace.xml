@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e872f7c7-d011-40df-82df-3283ff43bed4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/MarketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/MarketServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/CartControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/CartControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketAdminControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketAdminControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartLocatorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartLocatorServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.controllers.CartControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.controllers.CartControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.controllers.MarketAdminControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.controllers.MarketAdminControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.controllers.MarketControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.controllers.MarketControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.services.CartLocatorServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.services.CartLocatorServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.services.CartServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.services.CartServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.services.MarketServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-marketplaceserverapi.services.MarketServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.controllers.CartControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.controllers.CartControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.controllers.MarketAdminControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.controllers.MarketAdminControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.controllers.MarketControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.controllers.MarketControllerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.services.CartServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.services.CartServiceTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.services.MarketServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/marketplaceserverapi.services.MarketServiceTest.txt" afterDir="false" />
-    </list>
+    <list default="true" id="e872f7c7-d011-40df-82df-3283ff43bed4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,19 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/MarketServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/CartControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="294">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,11 +27,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketAdminControllerTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/MarketServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="814">
+              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartLocatorServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/repositories/ProductRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketAdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-357">
-              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+            <state relative-caret-position="170">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,10 +73,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/CartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="247">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,10 +85,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartLocatorServiceTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/RedirectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="168">
+              <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,10 +97,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartServiceTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/Cart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="-546">
+              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,22 +121,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="483">
+              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-630">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -176,6 +171,7 @@
       <find>ById</find>
       <find>TripCart</find>
       <find>maven-jar-plugin</find>
+      <find>jpa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,15 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Classes/InitialMarketData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/MarketServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Services/MarketServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Controllers/ShoppingTripController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Classes/ShoppingTrip.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Services/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/ServiceImplementations.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Services/MarketService.java" />
         <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Classes/Market.java" />
         <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Services/CartService.java" />
         <option value="$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Implementations/MarketServiceImpl.java" />
@@ -214,27 +201,36 @@
         <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/MarketAdminControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/ProductMapToArraySerializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/CartLocatorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/Cart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketAdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/CartService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/MarketService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/MarketMapToArraySerializer.java" />
-        <option value="$PROJECT_DIR$/marketData.json" />
         <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/InitialMarketData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartLocatorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/CartController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/CartControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartLocatorServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/InitialMarketData.java" />
+        <option value="$PROJECT_DIR$/marketData.json" />
+        <option value="$PROJECT_DIR$/src/main/resource/data.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/data.sql" />
+        <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceT.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/MarketServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketAdminControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/CartControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartLocatorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/ProductMapToArraySerializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/CartService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/CartController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/MarketService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/MarketServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/RedirectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/Cart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketAdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/repositories/ProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -262,15 +258,20 @@
           <item name="MarketplaceServer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Run Configurations" type="21c1f71a:MavenProjectsStructure$RunConfigurationsNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="MarketplaceServer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="2762" />
-    <option name="height" value="1770" />
+    <option name="x" value="170" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -279,6 +280,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -337,7 +339,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="marketplaceserverapi" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MarketplaceServerAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MarketplaceServerAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="marketplaceserverapi" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MarketplaceServerAPI" type="b2602c69:ProjectViewProjectNode" />
@@ -347,6 +358,13 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="marketplaceserverapi" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MarketplaceServerAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MarketplaceServerAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MarketplaceServerAPI" type="b2602c69:ProjectViewProjectNode" />
@@ -391,7 +409,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,7 +417,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547434973079" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547788841453" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -410,8 +427,10 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="MarketplaceServerAPI.Classes" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jason\IdeaProjects\MarketplaceServer" />
+      <recent name="C:\Users\jason\IdeaProjects\MarketplaceServer\src" />
+      <recent name="C:\Users\jason\IdeaProjects\MarketplaceServer\src\main" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="marketplaceserverapi.controllers" />
@@ -420,10 +439,8 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="MarketplaceServerAPI" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jason\IdeaProjects\MarketplaceServer" />
-      <recent name="C:\Users\jason\IdeaProjects\MarketplaceServer\src" />
-      <recent name="C:\Users\jason\IdeaProjects\MarketplaceServer\src\main" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="MarketplaceServerAPI.Classes" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -451,7 +468,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartServiceTest.givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CartServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarketplaceServer" />
       <extension name="coverage">
         <pattern>
@@ -461,29 +478,11 @@
       </extension>
       <option name="PACKAGE_NAME" value="marketplaceserverapi.services" />
       <option name="MAIN_CLASS_NAME" value="marketplaceserverapi.services.CartServiceTest" />
-      <option name="METHOD_NAME" value="givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MarketAdminControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MarketplaceServer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="marketplaceserverapi.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="marketplaceserverapi.controllers" />
-      <option name="MAIN_CLASS_NAME" value="marketplaceserverapi.controllers.MarketAdminControllerTest" />
-      <option name="METHOD_NAME" value="givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MarketControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MarketControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MarketplaceServer" />
       <extension name="coverage">
         <pattern>
@@ -493,8 +492,50 @@
       </extension>
       <option name="PACKAGE_NAME" value="marketplaceserverapi.controllers" />
       <option name="MAIN_CLASS_NAME" value="marketplaceserverapi.controllers.MarketControllerTest" />
-      <option name="METHOD_NAME" value="givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MarketControllerTest.givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarketplaceServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="marketplaceserverapi.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="marketplaceserverapi.controllers" />
+      <option name="MAIN_CLASS_NAME" value="marketplaceserverapi.controllers.MarketControllerTest" />
+      <option name="METHOD_NAME" value="givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MarketServiceT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarketplaceServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="marketplaceserverapi.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="marketplaceserverapi.services" />
+      <option name="MAIN_CLASS_NAME" value="marketplaceserverapi.services.MarketServiceT" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MarketServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MarketplaceServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="marketplaceserverapi.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="marketplaceserverapi.services" />
+      <option name="MAIN_CLASS_NAME" value="marketplaceserverapi.services.MarketServiceTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -524,45 +565,22 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="MarketplaceServer [test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="test" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Application" />
-      <item itemvalue="JUnit.MarketControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" />
-      <item itemvalue="JUnit.MarketAdminControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" />
-      <item itemvalue="JUnit.CartServiceTest.givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived" />
+      <item itemvalue="JUnit.MarketServiceTest" />
+      <item itemvalue="JUnit.MarketServiceT" />
+      <item itemvalue="JUnit.MarketControllerTest" />
+      <item itemvalue="JUnit.MarketControllerTest.givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived" />
+      <item itemvalue="JUnit.CartServiceTest" />
       <item itemvalue="Maven.MarketplaceServer [clean]" />
-      <item itemvalue="Maven.MarketplaceServer [test]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CartServiceTest.givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived" />
-        <item itemvalue="Maven.MarketplaceServer [test]" />
-        <item itemvalue="JUnit.MarketAdminControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" />
-        <item itemvalue="JUnit.MarketControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" />
+        <item itemvalue="JUnit.CartServiceTest" />
+        <item itemvalue="JUnit.MarketControllerTest.givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived" />
+        <item itemvalue="JUnit.MarketControllerTest" />
+        <item itemvalue="JUnit.MarketServiceT" />
+        <item itemvalue="JUnit.MarketServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -580,29 +598,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MarketControllerTest_givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived - 2019.01.12 at 15h 10m 00s.xml">
-      <configuration name="MarketControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" configurationId="JUnit" />
+    <history-entry file="MarketServiceT - 2019.01.16 at 23h 19m 44s.xml">
+      <configuration name="MarketServiceT" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MarketControllerTest_givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived - 2019.01.12 at 15h 10m 29s.xml">
-      <configuration name="MarketControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" configurationId="JUnit" />
+    <history-entry file="MarketServiceT - 2019.01.16 at 23h 21m 33s.xml">
+      <configuration name="MarketServiceT" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MarketAdminControllerTest_givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived - 2019.01.12 at 15h 26m 12s.xml">
-      <configuration name="MarketAdminControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" configurationId="JUnit" />
+    <history-entry file="MarketServiceT - 2019.01.16 at 23h 24m 32s.xml">
+      <configuration name="MarketServiceT" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MarketAdminControllerTest_givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived - 2019.01.12 at 15h 29m 43s.xml">
-      <configuration name="MarketAdminControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" configurationId="JUnit" />
+    <history-entry file="MarketControllerTest - 2019.01.16 at 23h 47m 27s.xml">
+      <configuration name="MarketControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MarketAdminControllerTest_givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived - 2019.01.12 at 15h 29m 58s.xml">
-      <configuration name="MarketAdminControllerTest.givenProductToAdd_whenProductInfoIsRetrieved_thenNewMarketIsReceived" configurationId="JUnit" />
+    <history-entry file="MarketControllerTest - 2019.01.16 at 23h 49m 12s.xml">
+      <configuration name="MarketControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CartServiceTest_givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived - 2019.01.12 at 17h 21m 55s.xml">
-      <configuration name="CartServiceTest.givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived" configurationId="JUnit" />
+    <history-entry file="MarketControllerTest - 2019.01.16 at 23h 54m 32s.xml">
+      <configuration name="MarketControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CartServiceTest_givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived - 2019.01.12 at 17h 23m 05s.xml">
-      <configuration name="CartServiceTest.givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived" configurationId="JUnit" />
+    <history-entry file="MarketControllerTest_givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived - 2019.01.16 at 23h 54m 45s.xml">
+      <configuration name="MarketControllerTest.givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CartServiceTest_givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived - 2019.01.12 at 19h 29m 33s.xml">
-      <configuration name="CartServiceTest.givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived" configurationId="JUnit" />
+    <history-entry file="MarketControllerTest_givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived - 2019.01.16 at 23h 55m 11s.xml">
+      <configuration name="MarketControllerTest.givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MarketControllerTest_givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived - 2019.01.16 at 23h 55m 23s.xml">
+      <configuration name="MarketControllerTest.givenProductToFind_whenProductTitleIsRetrieved_thenBlankJSONIsReceived" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CartServiceTest - 2019.01.17 at 00h 03m 11s.xml">
+      <configuration name="CartServiceTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -618,24 +642,25 @@
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19123206" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20332578" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32980132" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4973545" weight="0.34304637" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49811035" weight="0.397351" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32980132" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32847682" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5026455" side_tool="true" weight="0.54569536" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3245033" />
+      <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32980132" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32980132" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.4973545" visible="true" weight="0.41854304" />
+      <window_info anchor="bottom" id="TODO" order="4" weight="0.32980132" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49811035" weight="0.397351" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32847682" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5026455" side_tool="true" weight="0.54569536" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3245033" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24867725" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -674,14 +699,29 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceTest.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceTest.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/IdGenerator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/InMemoryRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/ProductRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/ProductResource.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/DefaultMarket.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Oder.java" />
@@ -713,15 +753,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/spring-session-2.1.3.RELEASE/spring-session-jdbc/src/main/java/org/springframework/session/jdbc/JdbcOperationsSessionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1260">
-          <folding>
-            <element signature="e#0#31469#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/spring-session-2.1.3.RELEASE/spring-session-jdbc/src/main/java/org/springframework/session/jdbc/JdbcOperationsSessionRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/Classes/ShoppingTrip.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/MarketplaceServerAPI/ServiceImplementations.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.2.RELEASE/spring-security-core-5.1.2.RELEASE.jar!/org/springframework/security/core/context/SecurityContextHolder.class">
@@ -735,33 +767,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/JwtTokenAuthenticationProcessingFilter.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/Config.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/Initializer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/CartLocatorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/MarketService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/marketData.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/MarketMapToArraySerializer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/Application.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -775,97 +780,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartLocatorServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/marketData.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/CartController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/InitialMarketData.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="217">
+          <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/data.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="21">
+          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/Cart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/InitialMarketData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/CartService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/CartControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/model/ProductMapToArraySerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="84">
+          <caret line="18" selection-start-line="18" selection-end-line="20" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -874,8 +824,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartLocatorServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="84">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/ProductMapToArraySerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -884,35 +851,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/CartServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="350">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/CartLocatorService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/services/MarketServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="336">
+          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/CartControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketAdminControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="1050">
+          <caret line="50" column="68" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/MarketService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/services/CartService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -921,8 +911,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+        <state relative-caret-position="170">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/MarketController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/RedirectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/controllers/CartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartLocatorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/repositories/ProductRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/models/Cart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-546">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -931,15 +981,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/MarketServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="814">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/marketplaceserverapi/controllers/MarketAdminControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/marketplaceserverapi/implementations/CartServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="303">
+          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

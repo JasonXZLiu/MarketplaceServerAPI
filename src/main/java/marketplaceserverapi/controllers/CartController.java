@@ -1,6 +1,6 @@
 package marketplaceserverapi.controllers;
 
-import marketplaceserverapi.model.Cart;
+import marketplaceserverapi.models.Cart;
 import marketplaceserverapi.services.CartLocatorService;
 import marketplaceserverapi.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,6 +80,6 @@ public class CartController {
 
     @RequestMapping(path = "/u/{userId}/checkout", method = RequestMethod.GET)
     public Cart checkOutProducts(@PathVariable("userId") String userId) throws InvalidParameterException, IOException, InvalidKeyException {
-        return cartService.checkOutProducts(getCartByUserId(userId));
+        return cartService.checkOutCart(getCartByUserId(userId));
     }
 }

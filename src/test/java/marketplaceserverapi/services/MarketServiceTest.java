@@ -1,9 +1,14 @@
 package marketplaceserverapi.services;
 
 import marketplaceserverapi.implementations.MarketServiceImpl;
-import marketplaceserverapi.model.Product;
-import org.junit.jupiter.api.AfterEach;
+import marketplaceserverapi.models.Product;
+import marketplaceserverapi.repositories.ProductRepository;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.IOException;
 import java.security.InvalidKeyException;
@@ -11,19 +16,19 @@ import java.security.InvalidKeyException;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest
+@Ignore
 public class MarketServiceTest {
 
-    @AfterEach
-    public void deleteAddedProduct() throws IOException, InvalidKeyException {
-        MarketService marketService = new MarketServiceImpl();
-        marketService.deleteProduct("Test_Shopify");
-    }
+    @Autowired
+    private ProductRepository productRepository;
 
     @Test
     public void givenProductToAddToMarket_whenProductIsAddedToMarket_thenNewMarketWithProductIsReceived() throws IOException, InvalidKeyException {
         // Given
-        Product product = new Product("Test_Shopify", 100, 10);
-        MarketService marketService = new MarketServiceImpl();
+        MarketService marketService = new MarketServiceImpl(productRepository);
+        Product product = new Product("Shirt", 100, 10);
 
         // when
         marketService.addProduct(product);
@@ -35,8 +40,8 @@ public class MarketServiceTest {
     @Test
     public void givenProductToPurchaseIsNotAvailable_whenProductIsPurchased_thenNullIsReceived() throws IOException, InvalidKeyException {
         // Given
-        String title = "Advanced_Shopify";
-        MarketService marketService = new MarketServiceImpl();
+        MarketService marketService = new MarketServiceImpl(productRepository);
+        String title = "Basketball";
 
         // when
         Product product = marketService.purchaseProduct(title);

@@ -1,7 +1,6 @@
 package marketplaceserverapi.controllers;
 
-import marketplaceserverapi.model.Product;
-import marketplaceserverapi.implementations.MarketServiceImpl;
+import marketplaceserverapi.models.Product;
 import marketplaceserverapi.services.MarketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -34,7 +33,7 @@ public class MarketController {
     private MarketService marketService;
 
     public MarketController() throws IOException, InvalidKeyException {
-        marketService = new MarketServiceImpl();
+
     }
 
     @RequestMapping(method = RequestMethod.GET)

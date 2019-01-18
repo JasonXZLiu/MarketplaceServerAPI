@@ -1,6 +1,6 @@
 package marketplaceserverapi.services;
 
-import marketplaceserverapi.model.Cart;
+import marketplaceserverapi.models.Cart;
 
 import java.io.IOException;
 import java.security.InvalidKeyException;

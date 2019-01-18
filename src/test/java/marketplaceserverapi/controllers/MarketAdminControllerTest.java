@@ -26,7 +26,7 @@ public class MarketAdminControllerTest {
         HttpPost httpPost = new HttpPost("http://localhost:8080/admin/market/add");
 
         // when
-        String json = "[ { \"title\": \"Perfect_Shopify\", \"price\": 100, \"inventoryCount\": 100 } ]";
+        String json = "[ { \"title\": \"Table\", \"price\": 3000, \"inventoryCount\": 20 } ]";
         StringEntity entity = new StringEntity(json);
         httpPost.setHeader("Accept", "application/json");
         httpPost.setHeader("Content-type", "application/json");
@@ -42,7 +42,7 @@ public class MarketAdminControllerTest {
     public void givenProductToDeleteFromMarket_whenProductTitleIsRetrieved_thenNewMarketIsReceived() throws IOException {
 
         // given
-        HttpUriRequest request = new HttpDelete("http://localhost:8080/admin/market/delete/" + "Perfect_Shopify");
+        HttpUriRequest request = new HttpDelete("http://localhost:8080/admin/market/delete/" + "Table");
 
         // when
         HttpResponse response = HttpClientBuilder.create().build().execute(request);

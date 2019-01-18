@@ -1,18 +1,15 @@
 [
     {
-        "id": 1,
         "title": "Basic_Shopify",
         "price": 29,
         "inventoryCount": 100
     },
     {
-        "id": 2,
         "title": "Shopify",
         "price": 79,
         "inventoryCount": 100
     },
     {
-        "id": 3,
         "title": "Advanced_Shopify",
         "price": 299,
         "inventoryCount": -1

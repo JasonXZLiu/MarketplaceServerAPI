@@ -1,7 +1,6 @@
 package marketplaceserverapi.controllers;
 
-import marketplaceserverapi.model.Product;
-import marketplaceserverapi.implementations.MarketServiceImpl;
+import marketplaceserverapi.models.Product;
 import marketplaceserverapi.services.MarketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,7 +19,7 @@ import java.util.Collection;
  *      update products on the market.
  *
  * Note: MarketAdminController is separate from MarketController
- * as only vendors should have these abilities. In the future,
+ * as only vendors should have the access. In the future,
  * vendors would be required to have authentication to change
  * their store offerings.
  *
@@ -35,7 +34,7 @@ public class MarketAdminController {
     private MarketService marketService;
 
     public MarketAdminController() throws IOException, InvalidKeyException {
-        marketService = new MarketServiceImpl();
+
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST)
@@ -43,13 +42,13 @@ public class MarketAdminController {
         return marketService.addProducts(product);
     }
 
-    @RequestMapping(path = "/update/{title}", method = RequestMethod.POST)
+    @RequestMapping(path = "/update/{productTitle}", method = RequestMethod.POST)
     public Product updateProduct(@PathVariable("productTitle") String productTitle, @RequestBody Product product) throws InvalidKeyException {
         return marketService.updateProduct(productTitle, product);
     }
 
-    @RequestMapping(path = "/delete/{title}", method = RequestMethod.DELETE)
-    public void deleteProduct(@PathVariable("title") String productTitle) throws InvalidKeyException {
+    @RequestMapping(path = "/delete/{productTitle}", method = RequestMethod.DELETE)
+    public void deleteProduct(@PathVariable("productTitle") String productTitle) throws InvalidKeyException {
         marketService.deleteProduct(productTitle);
     }
 }
