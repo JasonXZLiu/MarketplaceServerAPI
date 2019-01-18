@@ -119,7 +119,7 @@ All API calls are returned as JSON objects.
 
 GET: ht&#8203;tp://localhost:8080/market
 
-![sample get /market response](./postman_screenshot/market.png)
+![sample get /market response](./postman_screenshot/market.PNG)
 
 GET: ht&#8203;tp://localhost:8080/cart/u/1/view
 
