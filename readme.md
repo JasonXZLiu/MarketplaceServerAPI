@@ -56,7 +56,7 @@ One of the features that I added to each cart was a timestamp. So, every time a 
 
 Finally, I added in an in-memory database to deal with saving the list of products on the market (using H2). This was done so that the market/list of products did not have to be static. At this step, I also changed my implementation to prevent users from having the ability to buy a product after it was deleted from the market by the vendor.
 
-And after it was all done, I added unit tests using JUnit to validate business logic and HTTPResponses. (Note: Because of the nature of Spring and JUnit4, I had to ignore one test on two class. JUnit was throwing a NoRunnableMethods exception.)
+And after it was all done, I added unit tests using JUnit to validate business logic and HTTPResponses. Integration tests were also added for the controllers. (Note: Because of the nature of Spring and JUnit4, I had to ignore one test on two class. JUnit was throwing a NoRunnableMethods exception.)
 
 ### Next Steps
 
