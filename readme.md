@@ -10,7 +10,7 @@ Some key features that were implemented include:
 * concurrency compatibility by creating independent carts for each user
 * synchronized blocks for purchasing items to avoid the race condition
 * made the application loosely coupled, extendable and adaptable by creating multiple interfaces with implementation classes and utilizing the IoC container provided by Spring
-* unit tests through JUnit
+* unit and integration tests through JUnit
 
 [Check out how to use the application](#prerequisites)
 
