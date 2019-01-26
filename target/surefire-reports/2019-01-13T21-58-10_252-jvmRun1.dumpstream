@@ -1,0 +1,238 @@
+# Created at 2019-01-13T21:58:19.282
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.io.DataInputStream.readFully(DataInputStream.java:197)
+	at java.io.DataInputStream.readFully(DataInputStream.java:169)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:126)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:390)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2019-01-13T21:58:19.987
+Unexpected IOException with stream: 21:58:19.971 [main] DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 0:0:0:0:0:0:0:1:55967<->0:0:0:0:0:0:0:1:8080
+
+
+# Created at 2019-01-13T21:58:19.997
+Unexpected IOException with stream: 21:58:19.997 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /market/hello HTTP/1.1
+
+
+# Created at 2019-01-13T21:58:20.009
+Unexpected IOException with stream: 21:58:20.009 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+
+
+# Created at 2019-01-13T21:58:20.017
+Unexpected IOException with stream: 21:58:20.017 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+
+
+# Created at 2019-01-13T21:58:20.033
+Unexpected IOException with stream: 21:58:20.033 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> GET /market/hello HTTP/1.1
+
+
+# Created at 2019-01-13T21:58:20.033
+Unexpected IOException with stream: 21:58:20.033 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Host: localhost:8080
+
+
+# Created at 2019-01-13T21:58:20.048
+Unexpected IOException with stream: 21:58:20.048 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Connection: Keep-Alive
+
+
+# Created at 2019-01-13T21:58:20.048
+Unexpected IOException with stream: 21:58:20.048 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> User-Agent: Apache-HttpClient/4.5.6 (Java/1.8.0_191)
+
+
+# Created at 2019-01-13T21:58:20.064
+Unexpected IOException with stream: 21:58:20.064 [main] DEBUG org.apache.http.headers - http-outgoing-3 >> Accept-Encoding: gzip,deflate
+
+
+# Created at 2019-01-13T21:58:20.080
+Unexpected IOException with stream: 21:58:20.080 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "GET /market/hello HTTP/1.1[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.095
+Unexpected IOException with stream: 21:58:20.080 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Host: localhost:8080[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.095
+Unexpected IOException with stream: 21:58:20.095 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Connection: Keep-Alive[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.111
+Unexpected IOException with stream: 21:58:20.111 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "User-Agent: Apache-HttpClient/4.5.6 (Java/1.8.0_191)[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.111
+Unexpected IOException with stream: 21:58:20.111 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.127
+Unexpected IOException with stream: 21:58:20.127 [main] DEBUG org.apache.http.wire - http-outgoing-3 >> "[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.283
+Unexpected IOException with stream: 21:58:20.283 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "HTTP/1.1 500 [\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.298
+Unexpected IOException with stream: 21:58:20.298 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.330
+Unexpected IOException with stream: 21:58:20.330 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Transfer-Encoding: chunked[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.345
+Unexpected IOException with stream: 21:58:20.345 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Date: Mon, 14 Jan 2019 02:58:20 GMT[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.345
+Unexpected IOException with stream: 21:58:20.345 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "Connection: close[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.361
+Unexpected IOException with stream: 21:58:20.361 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.361
+Unexpected IOException with stream: 21:58:20.361 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "1a7a[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.377
+Unexpected IOException with stream: 21:58:20.377 [main] DEBUG org.apache.http.wire - http-outgoing-3 << "{"timestamp":"2019-01-14T02:58:20.236+0000","status":500,"error":"Internal Server Error","message":"hello does not exist on the market","trace":"java.security.InvalidKeyException: hello does not exist on the market\r\n\tat marketplaceserverapi.implementations.MarketServiceImpl.getProductByTitle(MarketServiceImpl.java:49)\r\n\tat marketplaceserverapi.controllers.MarketController.getProductFromMarket(MarketController.java:52)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\r\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)\r\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\r\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)\r\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)\r\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)\r\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)\r\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:634)\r\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)\r\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n\tat org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n\tat org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n\tat org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)\r\n\tat org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)\r\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\r\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)\r\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\r\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\r\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\r\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\r\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)\r\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\r\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)\r\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)\r\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\r\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\r\n\tat java.base/java.lang.Thread.run(Thread.java:834)\r\n","path":"/market/hello"}[\r][\n]"
+
+
+# Created at 2019-01-13T21:58:20.392
+Unexpected IOException with stream: 21:58:20.377 [main] DEBUG org.apache.http.headers - http-outgoing-3 << HTTP/1.1 500 
+
+
+# Created at 2019-01-13T21:58:20.392
+Unexpected IOException with stream: 21:58:20.392 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Content-Type: application/json;charset=UTF-8
+
+
+# Created at 2019-01-13T21:58:20.408
+Unexpected IOException with stream: 21:58:20.408 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Transfer-Encoding: chunked
+
+
+# Created at 2019-01-13T21:58:20.408
+Unexpected IOException with stream: 21:58:20.408 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Date: Mon, 14 Jan 2019 02:58:20 GMT
+
+
+# Created at 2019-01-13T21:58:20.423
+Unexpected IOException with stream: 21:58:20.423 [main] DEBUG org.apache.http.headers - http-outgoing-3 << Connection: close
+
+
+# Created at 2019-01-13T21:58:20.439
+Unexpected IOException: 6,1,marketplaceserverapi.controllers.MarketControllerTest,givenProductToFind_whenProductTitleIsRetrieved_then500IsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.439
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,marketplaceserverapi.controllers.MarketControllerTest,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.455
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,marketplaceserverapi.services.CartLocatorServiceTest,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.470
+Unexpected IOException: 5,1,marketplaceserverapi.services.CartLocatorServiceTest,givenNewUserNotAddedBefore_whenUserIdCartIsRetrieved_thenCartReceivedIsEmpty,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.498
+Unexpected IOException: 6,1,marketplaceserverapi.services.CartLocatorServiceTest,givenNewUserNotAddedBefore_whenUserIdCartIsRetrieved_thenCartReceivedIsEmpty,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.506
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,marketplaceserverapi.services.CartLocatorServiceTest,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.514
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,marketplaceserverapi.services.CartServiceTest,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.518
+Unexpected IOException: 5,1,marketplaceserverapi.services.CartServiceTest,givenCartToCheckOut_whenCartIsCheckedOut_thenNewCartWithCompletedAsTrueIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.565
+Unexpected IOException with stream: 21:58:20.565 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+
+
+# Created at 2019-01-13T21:58:20.596
+Unexpected IOException: 6,1,marketplaceserverapi.services.CartServiceTest,givenCartToCheckOut_whenCartIsCheckedOut_thenNewCartWithCompletedAsTrueIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.596
+Unexpected IOException with stream: 21:58:20.596 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+
+
+# Created at 2019-01-13T21:58:20.612
+Unexpected IOException: 5,1,marketplaceserverapi.services.CartServiceTest,givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.612
+Unexpected IOException with stream: 21:58:20.612 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+
+
+# Created at 2019-01-13T21:58:20.628
+Unexpected IOException: 6,1,marketplaceserverapi.services.CartServiceTest,givenProductTitleToAddToCart_whenProductIsAddedToCart_thenNewCartWithProductIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.628
+Unexpected IOException with stream: 21:58:20.628 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+
+
+# Created at 2019-01-13T21:58:20.643
+Unexpected IOException: 5,1,marketplaceserverapi.services.CartServiceTest,givenProductTitleAndNumberToAddToCart_whenProductsAreAddedToCart_thenNewCartWithCorrectTotalPriceIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.643
+Unexpected IOException with stream: 21:58:20.643 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+
+
+# Created at 2019-01-13T21:58:20.659
+Unexpected IOException: 6,1,marketplaceserverapi.services.CartServiceTest,givenProductTitleAndNumberToAddToCart_whenProductsAreAddedToCart_thenNewCartWithCorrectTotalPriceIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.659
+Unexpected IOException with stream: 21:58:20.659 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+
+
+# Created at 2019-01-13T21:58:20.675
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,marketplaceserverapi.services.CartServiceTest,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.690
+Unexpected IOException with stream: 21:58:20.675 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager is shutting down
+
+
+# Created at 2019-01-13T21:58:20.690
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,marketplaceserverapi.services.MarketServiceTest,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.690
+Unexpected IOException with stream: 21:58:20.690 [Finalizer] DEBUG org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-3: Close connection
+
+
+# Created at 2019-01-13T21:58:20.706
+Unexpected IOException: 5,1,marketplaceserverapi.services.MarketServiceTest,givenProductToAddToMarket_whenProductIsAddedToMarket_thenNewMarketWithProductIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.721
+Unexpected IOException with stream: 21:58:20.706 [Finalizer] DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection manager shut down
+
+
+# Created at 2019-01-13T21:58:20.721
+Unexpected IOException: 6,1,marketplaceserverapi.services.MarketServiceTest,givenProductToAddToMarket_whenProductIsAddedToMarket_thenNewMarketWithProductIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.737
+Unexpected IOException: 5,1,marketplaceserverapi.services.MarketServiceTest,givenProductToPurchaseIsNotAvailable_whenProductIsPurchased_thenNullIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.753
+Unexpected IOException: 6,1,marketplaceserverapi.services.MarketServiceTest,givenProductToPurchaseIsNotAvailable_whenProductIsPurchased_thenNullIsReceived,null,null,null
+
+
+# Created at 2019-01-13T21:58:20.768
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,marketplaceserverapi.services.MarketServiceTest,null,null,null
+
+
