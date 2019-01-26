@@ -58,6 +58,10 @@ Finally, I added in an in-memory database to deal with saving the list of produc
 
 And after it was all done, I added unit tests using JUnit to validate business logic and HTTPResponses. Integration tests were also added for the controllers. (Note: Because of the nature of Spring and JUnit4, I had to ignore one test on two class. JUnit was throwing a NoRunnableMethods exception.)
 
+## Google Home Bot
+
+So, realizing that online shopping shouldn't only be done through a website, I utilized DialogFlow to create a Google Home bot as another entry point. Hopefully, I can extend these features later on and have the ability to search for specific products worn or used by popular celebrities or influencers.
+
 ### Next Steps
 
 where to go next...
