@@ -11,6 +11,7 @@ Some key features that were implemented include:
 * synchronized blocks for purchasing items to avoid the race condition
 * made the application loosely coupled, extendable and adaptable by creating multiple interfaces with implementation classes and utilizing the IoC container provided by Spring
 * unit and integration tests through JUnit
+* utilized DialogFlow to create a Google Home bot as another entry point
 
 [Check out how to use the application](#prerequisites)
 
