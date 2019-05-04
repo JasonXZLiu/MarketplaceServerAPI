@@ -1,8 +1,6 @@
 package marketplaceserverapi.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Product contains product data. Each product has:
@@ -21,6 +19,7 @@ import javax.persistence.Id;
 public class Product {
 
     @Id
+    private int id;
     private String title;
     private double price;
     @Column(name = "inventorycount")
@@ -32,6 +31,15 @@ public class Product {
         this.title = title;
         this.price = price;
         this.inventoryCount = inventoryCount;
+    }
+
+    public Product(int id, Product product) {
+        this(product.title, product.price, product.inventoryCount);
+        this.id = id;
+    }
+
+    public int getProductId() {
+        return id;
     }
 
     public String getTitle() {

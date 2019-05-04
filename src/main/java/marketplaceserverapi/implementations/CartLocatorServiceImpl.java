@@ -40,7 +40,11 @@ public final class CartLocatorServiceImpl implements CartLocatorService {
     public synchronized Cart getCartByUserId(String userId) {
         removeTimedOutCart();
         for (Map.Entry<String, Cart> entry : userCarts.entrySet()) {
-            if (entry.getKey().equals(userId)) return entry.getValue().updateLastTouched();
+            Cart cart = entry.getValue();
+            if (entry.getKey().equals(userId)) {
+                cart.setLastTouched();
+                return cart;
+            }
         }
         Cart cart = new Cart(userId);
         userCarts.put(userId, cart);

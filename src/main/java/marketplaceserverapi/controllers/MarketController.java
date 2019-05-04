@@ -46,13 +46,8 @@ public class MarketController {
         return marketService.getAvailableCollection();
     }
 
-    @RequestMapping(path = "/{title}", method = RequestMethod.GET)
-    public Product getProductFromMarket(@PathVariable("title") String productTitle) throws InvalidKeyException {
-        return marketService.getProductByTitle(productTitle);
-    }
-
-    @RequestMapping(path = "/purchase/{title}", method = RequestMethod.GET)
-    public Product purchaseProduct(@PathVariable("title") String productTitle) throws InvalidKeyException {
-        return marketService.purchaseProduct(productTitle);
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    public Product getProductFromMarket(@PathVariable("id") String productId) throws InvalidKeyException {
+        return marketService.getProductById(Integer.parseInt(productId));
     }
 }

@@ -13,7 +13,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -37,16 +36,16 @@ public class MarketServiceTest {
         assertTrue(marketService.getMarket().contains(product));
     }
 
-    @Test
-    public void givenProductToPurchaseIsNotAvailable_whenProductIsPurchased_thenNullIsReceived() throws IOException, InvalidKeyException {
-        // Given
-        MarketService marketService = new MarketServiceImpl(productRepository);
-        String title = "Basketball";
-
-        // when
-        Product product = marketService.purchaseProduct(title);
-
-        // then
-        assertNull(product);
-    }
+//    @Test
+//    public void givenProductToPurchaseIsNotAvailable_whenProductIsPurchased_thenNullIsReceived() throws IOException, InvalidKeyException {
+//        // Given
+//        MarketService marketService = new MarketServiceImpl(productRepository);
+//        String title = "Basketball";
+//
+//        // when
+//        Product product = marketService.purchaseProduct(title);
+//
+//        // then
+//        assertNull(product);
+//    }
 }

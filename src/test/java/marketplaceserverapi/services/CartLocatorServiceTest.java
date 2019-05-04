@@ -29,6 +29,6 @@ public class CartLocatorServiceTest {
         Cart cart = cartLocatorService.getCartByUserId(userId);
 
         // then
-        assertEquals(cart.getItems().size(), 0);
+        assertEquals(cart.getOrderItems().size(), 0);
     }
 }

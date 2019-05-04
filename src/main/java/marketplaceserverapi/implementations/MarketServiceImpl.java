@@ -45,19 +45,25 @@ public class MarketServiceImpl implements MarketService {
         return productList;
     }
 
-    public Product getProductByTitle(String productId) throws InvalidKeyException {
-        List<Product> products = productRepository.findByTitleIgnoreCase(productId);
+    public Product getProductById(int productId) throws InvalidKeyException {
+        List<Product> products = productRepository.findById(productId);
         if (products == null || products.size() == 0)  return null;
         return products.get(0);
     }
 
-    public boolean containsProduct(Product product) {
-        List<Product> products = productRepository.findByTitleIgnoreCase(product.getTitle());
-        return products != null && products.size() > 0;
+    public boolean containsProduct(Product product) throws InvalidKeyException {
+        return getProductById(product.getProductId()) != null;
     }
 
-    public void addProduct(Product product) throws InvalidKeyException {
-        if (containsProduct(product))  updateProduct(product.getTitle(),product);
+    public int createProductId() {
+        List<Product> products = (List<Product>) productRepository.findAll();
+        return products.size() + 1;
+    }
+
+    public void addProduct(Product productWithoutId) throws InvalidKeyException {
+        int newProductId = createProductId();
+        Product product = new Product(newProductId, productWithoutId);
+        if (containsProduct(product)) updateProduct(product.getProductId(), product);
         productRepository.save(product);
     }
 
@@ -73,8 +79,8 @@ public class MarketServiceImpl implements MarketService {
         return getMarket();
     }
 
-    public Product updateProduct(String productId, Product product) throws InvalidKeyException {
-        if (getProductByTitle(productId) != null) return productRepository.save(product);
+    public Product updateProduct(int productId, Product product) throws InvalidKeyException {
+        if (containsProduct(product)) return productRepository.save(product);
         throw new InvalidKeyException(productId + " does not yet exist on the market.");
     }
 
@@ -87,8 +93,8 @@ public class MarketServiceImpl implements MarketService {
         return result;
     }
 
-    public Product deleteProduct(String productId) throws InvalidKeyException {
-        Product product = getProductByTitle(productId);
+    public Product deleteProduct(int productId) throws InvalidKeyException {
+        Product product = getProductById(productId);
         if (product == null) return null;
         productRepository.delete(product);
         return product;
@@ -109,34 +115,5 @@ public class MarketServiceImpl implements MarketService {
 
     public Collection<Product> getAvailableCollection() {
         return getAvailable();
-    }
-
-    public boolean checkPurchase(HashMap<String, Integer> items) throws InvalidKeyException {
-        for (Map.Entry<String, Integer> item : items.entrySet()) {
-            Product product = getProductByTitle(item.getKey());
-            if (product == null) return false;
-            if (!product.checkAvailable(Math.max(0, item.getValue()))) return false;
-        }
-        return true;
-    }
-
-    public synchronized boolean finalizePurchase(HashMap<String, Integer> items) throws IllegalArgumentException, InvalidKeyException {
-        if (!checkPurchase(items)) return false;
-        List<Product> products = new ArrayList<>();
-        for (Map.Entry<String, Integer> item : items.entrySet()) {
-            Product product = getProductByTitle(item.getKey()).decrementInventoryCount(item.getValue());
-            products.add(product);
-        }
-        productRepository.saveAll(products);
-        return true;
-    }
-
-    public synchronized Product purchaseProduct(String productId) throws IllegalArgumentException, InvalidKeyException {
-        HashMap<String, Integer> item = new HashMap<>();
-        Product product = getProductByTitle(productId);
-        if (product == null) return null;
-        item.put(productId, 1);
-        if (finalizePurchase(item)) return product;
-        return null;
     }
 }

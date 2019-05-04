@@ -1,74 +1,109 @@
 package marketplaceserverapi.implementations;
 
 import marketplaceserverapi.models.Cart;
-import marketplaceserverapi.models.Product;
+import marketplaceserverapi.models.OrderItem;
 import marketplaceserverapi.services.CartService;
-import marketplaceserverapi.services.MarketService;
+import marketplaceserverapi.services.OrderItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.security.InvalidKeyException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentMap;
+import java.security.InvalidParameterException;
+import java.util.List;
 
-/**
- * CartServiceImpl provides an implementation of CartService.
- * CartServiceImpl contains an instance to marketService
- * in order to retrieve/get products by title from the market.
- *
- * @author Jason Liu
- */
 @Service
-@Component("cartService")
-public final class CartServiceImpl implements CartService {
-    /** IoC */
+@Qualifier("cartService")
+public class CartServiceImpl implements CartService {
+
     @Autowired
-    @Qualifier("marketService")
-    private MarketService marketService;
+    @Qualifier("orderItemService")
+    private OrderItemService orderItemService;
 
-    public CartServiceImpl(MarketService marketService) {
-        this.marketService = marketService;
+    public CartServiceImpl() {}
+
+    public CartServiceImpl(OrderItemService orderItemService) {
+        this.orderItemService = orderItemService;
     }
 
-    public Product findProductOnMarket(String productTitle) throws InvalidKeyException {
-        return marketService.getProductByTitle(productTitle);
+    public Cart updateLastTouched(Cart cart) {
+        cart.setLastTouched();
+        return cart;
     }
 
-    public Cart addToCart(Cart cart, String productTitle) throws InvalidKeyException {
-        return cart.addToCart(findProductOnMarket(productTitle), 1);
-    }
-
-    public Cart addToCart(Cart cart, String productTitle, String num) throws InvalidKeyException {
-        return cart.addToCart(findProductOnMarket(productTitle), Integer.parseInt(num));
-    }
-
-    public Cart removeFromCart(Cart cart, String productTitle) throws InvalidKeyException {
-        return cart.removeFromCart(findProductOnMarket(productTitle), 1);
-    }
-
-    public Cart removeFromCart(Cart cart, String productTitle, String num) throws InvalidKeyException {
-        return cart.removeFromCart(findProductOnMarket(productTitle), Integer.parseInt(num));
-    }
-
-    public void confirmTotalPrice(Cart cart) {
-        double totalPrice = 0;
-        ConcurrentMap<String, Product> productMap = marketService.getAllProducts();
-        for (Map.Entry<String, Integer> item : cart.getItems().entrySet()) {
-            Product product = productMap.get(item.getKey());
-            if (product == null) throw new IllegalStateException(item.getKey() + " does not exist on the market anymore.");
-            totalPrice += item.getValue() * product.getPrice();
+    public int findProductIndexInCart(Cart cart, int productId) {
+        List<OrderItem> orderItems = cart.getOrderItems();
+        for (int i = 0; i < orderItems.size(); i++) {
+            if (orderItems.get(i).getProductId() == productId) return i;
         }
-        if (cart.getTotalPrice() != totalPrice) throw new IllegalStateException("A product's price was updated while you tried to purchase. Please re-add the products to your cart.");
+        return -1;
+    }
+
+    public OrderItem findProductInCart(Cart cart, int productId) {
+        int idx = findProductIndexInCart(cart, productId);
+        if (idx == -1) return null;
+        else return cart.getOrderItems().get(idx);
+    }
+
+    public void recalculateTotal(Cart cart) {
+        int total = 0;
+        List<OrderItem> orderItems = cart.getOrderItems();
+        for (int i = 0; i < orderItems.size(); i++) {
+            OrderItem orderItem = orderItems.get(i);
+            total += orderItem.getPrice() * orderItem.getQuantity();
+        }
+        cart.setTotalPrice(total);
+    }
+
+    public Cart addToCart(Cart cart, int productId, int quantity) throws InvalidParameterException, InvalidKeyException {
+        if (quantity <= 0) throw new InvalidParameterException("Number of products to purchase must be positive: " + quantity);
+        OrderItem orderItem = findProductInCart(cart, productId);
+        if (orderItem == null) {
+            orderItem = orderItemService.createOrderItem(productId, quantity);
+            cart.addOrderItem(orderItem);
+        } else {
+            int curQuantity = orderItem.getQuantity();
+            orderItem.setQuantity(curQuantity + quantity);
+        }
+        recalculateTotal(cart);
+        return cart;
+    }
+
+    public Cart removeFromCart(Cart cart, int productId, int quantity) {
+        int orderItemIdx = findProductIndexInCart(cart, productId);
+        if (orderItemIdx == -1) return cart;
+
+        if (quantity <= 0) throw new InvalidParameterException("Number of products to remove must be positive: " + quantity);
+        OrderItem orderItem = cart.getOrderItems().get(orderItemIdx);
+        int amountToRemove = Math.min(quantity, orderItem.getQuantity());
+        int curQuantity = orderItem.getQuantity();
+        orderItem.setQuantity(curQuantity - amountToRemove);
+        recalculateTotal(cart);
+        return cart;
+    }
+
+    public synchronized void confirmTotalPrice(Cart cart) throws InvalidKeyException {
+        List<OrderItem> orderItems = cart.getOrderItems();
+        for (int i = 0; i < orderItems.size(); i++) {
+            OrderItem orderItem = orderItems.get(i);
+            orderItemService.confirmOrderItemPrice(orderItem);
+        }
+    }
+
+    public synchronized boolean finalizePurchase(Cart cart) throws InvalidKeyException {
+        boolean flag = true;
+        List<OrderItem> orderItems = cart.getOrderItems();
+        for (int i = 0; i < orderItems.size(); i++) {
+            OrderItem orderItem = orderItems.get(i);
+            orderItemService.finalizePurchase(orderItem);
+        }
+        return flag;
     }
 
     public synchronized Cart checkOutCart(Cart cart) throws InvalidKeyException {
         Cart purchased = cart.clone();
-        HashMap<String, Integer> items = cart.getItems();
+        finalizePurchase(cart);
         confirmTotalPrice(cart);
-        if (!marketService.finalizePurchase(items)) return cart;
         cart.clear();
         purchased.setCompleted(true);
         return purchased;

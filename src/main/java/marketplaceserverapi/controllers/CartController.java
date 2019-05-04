@@ -48,24 +48,24 @@ public class CartController {
         return cartLocatorService.getCartByUserId(userId);
     }
 
-    @RequestMapping(value = "/u/{userId}/add/{title}", method = RequestMethod.GET)
-    public Cart addToCart(@PathVariable("userId") String userId, @PathVariable("title") String productTitle) throws InvalidKeyException, IOException {
-        return cartService.addToCart(getCartByUserId(userId), productTitle);
+    @RequestMapping(value = "/u/{userId}/add/{id}", method = RequestMethod.GET)
+    public Cart addToCart(@PathVariable("userId") String userId, @PathVariable("id") String productId) throws InvalidKeyException, IOException {
+        return cartService.addToCart(getCartByUserId(userId), Integer.parseInt(productId), 1);
     }
 
-    @RequestMapping(value = "/u/{userId}/add/{title}/{num}", method = RequestMethod.GET)
-    public Cart addToCart(@PathVariable("userId") String userId, @PathVariable("title") String productTitle, @PathVariable("num") String num) throws InvalidKeyException, IOException {
-        return cartService.addToCart(getCartByUserId(userId), productTitle, num);
+    @RequestMapping(value = "/u/{userId}/add/{id}/{quantity}", method = RequestMethod.GET)
+    public Cart addToCart(@PathVariable("userId") String userId, @PathVariable("id") String productId, @PathVariable("quantity") String quantity) throws InvalidKeyException, IOException {
+        return cartService.addToCart(getCartByUserId(userId), Integer.parseInt(productId), Integer.parseInt(quantity));
     }
 
-    @RequestMapping(value = "/u/{userId}/remove/{title}", method = RequestMethod.DELETE)
-    public Cart removeFromCart(@PathVariable("userId") String userId, @PathVariable("title") String productTitle) throws InvalidKeyException, IOException {
-        return cartService.removeFromCart(getCartByUserId(userId), productTitle);
+    @RequestMapping(value = "/u/{userId}/remove/{id}", method = RequestMethod.DELETE)
+    public Cart removeFromCart(@PathVariable("userId") String userId, @PathVariable("id") String productId) throws InvalidKeyException, IOException {
+        return cartService.removeFromCart(getCartByUserId(userId), Integer.parseInt(productId), 1);
     }
 
-    @RequestMapping(value = "/u/{userId}/remove/{title}/{num}", method = RequestMethod.DELETE)
-    public Cart removeFromCart(@PathVariable("userId") String userId, @PathVariable("title") String productTitle, @PathVariable("num") String num) throws InvalidKeyException, IOException {
-        return cartService.removeFromCart(getCartByUserId(userId), productTitle, num);
+    @RequestMapping(value = "/u/{userId}/remove/{id}/{quantity}", method = RequestMethod.DELETE)
+    public Cart removeFromCart(@PathVariable("userId") String userId, @PathVariable("id") String productId, @PathVariable("quantity") String quantity) throws InvalidKeyException, IOException {
+        return cartService.removeFromCart(getCartByUserId(userId), Integer.parseInt(productId), Integer.parseInt(quantity));
     }
 
     @RequestMapping(value = "/u/{userId}/view", method = RequestMethod.GET)

@@ -1,9 +1,8 @@
 package marketplaceserverapi.models;
 
-import java.security.InvalidParameterException;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Cart contains cart data. Each cart has:
@@ -23,12 +22,12 @@ import java.util.Map;
 public class Cart {
     private String id;
     private double totalPrice;
-    private HashMap<String, Integer> items;
+    private List<OrderItem> orderItems;
     private boolean completed;
     private LocalDateTime lastTouched;
 
     public Cart() {
-        items = new HashMap<>();
+        orderItems = new ArrayList<>();
         totalPrice = 0;
         completed = false;
         lastTouched = LocalDateTime.now();
@@ -39,12 +38,8 @@ public class Cart {
         this.id = id;
     }
 
-    public HashMap<String, Integer> getItems() {
-        return items;
-    }
-
-    public void setItems(HashMap<String, Integer> items) {
-        this.items = items;
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
     }
 
     public double getTotalPrice() {
@@ -55,71 +50,33 @@ public class Cart {
 
     public void setCompleted(boolean completed) {this.completed = completed;}
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public LocalDateTime getLastTouched() {
         return lastTouched;
     }
 
-    public void setLastTouched(LocalDateTime lastTouched) {
-        this.lastTouched = lastTouched;
-    }
-
-    public Cart updateLastTouched() {
+    public void setLastTouched() {
         this.lastTouched = LocalDateTime.now();
-        return this;
     }
 
-    private String getProductTitleFromCart(String productTitle) {
-        for (Map.Entry<String, Integer> item : items.entrySet()) {
-            if (item.getKey().equalsIgnoreCase(productTitle)) return item.getKey();
-        }
-        return null;
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    private void adjustTotalPrice(double num) {
-        totalPrice += num;
-    }
-
-    public Cart addToCart(Product product, int num) throws InvalidParameterException {
-        if (num <= 0) throw new InvalidParameterException("Number of products to purchase must be positive: " + num);
-        items.put(product.getTitle(), items.getOrDefault(product.getTitle(), 0) + num);
-        adjustTotalPrice(product.getPrice() * num);
-        return this;
-    }
-
-    public Cart removeFromCart(Product product, int num) {
-        if (getProductTitleFromCart(product.getTitle()) == null) return this;
-
-        if (num <= 0) throw new InvalidParameterException("Number of products to remove must be positive: " + num);
-        if (items.get(product.getTitle()) <= num) {
-            adjustTotalPrice(-items.get(product.getTitle()) * product.getPrice());
-            items.remove(product.getTitle());
-        }
-        else {
-            adjustTotalPrice(-num * product.getPrice());
-            items.put(product.getTitle(), items.get(product.getTitle()) - num);
-        }
-        return this;
+    public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
     }
 
     public Cart clear() {
         totalPrice = 0;
-        items = new HashMap<>();
+        orderItems = new ArrayList<>();
         return this;
     }
 
     public Cart clone() {
         Cart clone = new Cart();
         clone.totalPrice = this.totalPrice;
-        for (Map.Entry<String, Integer> item : items.entrySet()) {
-            clone.items.put(item.getKey(), item.getValue());
+        for (int i = 0; i < orderItems.size(); i++) {
+            clone.orderItems.add(this.orderItems.get(i));
         }
         clone.id = this.id;
         clone.completed = this.completed;

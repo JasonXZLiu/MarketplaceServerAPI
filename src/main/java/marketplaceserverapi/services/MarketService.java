@@ -4,7 +4,6 @@ import marketplaceserverapi.models.Product;
 
 import java.security.InvalidKeyException;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ConcurrentMap;
 
@@ -21,9 +20,9 @@ public interface MarketService {
 
     Collection<Product> getMarket();
 
-    Product getProductByTitle(String stringId) throws InvalidKeyException;
+    Product getProductById(int productId) throws InvalidKeyException;
 
-    boolean containsProduct(Product product);
+    boolean containsProduct(Product product) throws InvalidKeyException;
 
     void addProduct(Product product) throws InvalidKeyException;
 
@@ -31,19 +30,15 @@ public interface MarketService {
 
     Collection<Product> addProducts(List<Product> products) throws InvalidKeyException;
 
-    Product updateProduct(String stringId, Product product) throws InvalidKeyException;
+    Product updateProduct(int productId, Product product) throws InvalidKeyException;
 
     List<Product> getAvailable();
 
-    Product deleteProduct(String stringId) throws InvalidKeyException;
+    Product deleteProduct(int productId) throws InvalidKeyException;
 
     Collection<Product> getCollection();
 
     ConcurrentMap<String, Product> getAllProducts();
 
     Collection<Product> getAvailableCollection();
-
-    boolean finalizePurchase(HashMap<String, Integer> items) throws IllegalArgumentException, InvalidKeyException;
-
-    Product purchaseProduct(String stringId) throws IllegalArgumentException, InvalidKeyException;
 }

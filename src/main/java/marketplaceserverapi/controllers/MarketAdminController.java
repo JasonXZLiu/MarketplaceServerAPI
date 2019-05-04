@@ -42,13 +42,13 @@ public class MarketAdminController {
         return marketService.addProducts(product);
     }
 
-    @RequestMapping(path = "/update/{productTitle}", method = RequestMethod.POST)
-    public Product updateProduct(@PathVariable("productTitle") String productTitle, @RequestBody Product product) throws InvalidKeyException {
-        return marketService.updateProduct(productTitle, product);
+    @RequestMapping(path = "/update/{productId}", method = RequestMethod.POST)
+    public Product updateProduct(@PathVariable("productId") String productId, @RequestBody Product product) throws InvalidKeyException {
+        return marketService.updateProduct(Integer.parseInt(productId), product);
     }
 
-    @RequestMapping(path = "/delete/{productTitle}", method = RequestMethod.DELETE)
-    public void deleteProduct(@PathVariable("productTitle") String productTitle) throws InvalidKeyException {
-        marketService.deleteProduct(productTitle);
+    @RequestMapping(path = "/delete/{productId}", method = RequestMethod.DELETE)
+    public void deleteProduct(@PathVariable("productId") String productId) throws InvalidKeyException {
+        marketService.deleteProduct(Integer.parseInt(productId));
     }
 }

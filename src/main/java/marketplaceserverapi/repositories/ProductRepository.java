@@ -15,6 +15,6 @@ import java.util.List;
  */
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
-    List<Product> findByTitleIgnoreCase(String productTitle);
+    List<Product> findById(int productId);
 
 }
