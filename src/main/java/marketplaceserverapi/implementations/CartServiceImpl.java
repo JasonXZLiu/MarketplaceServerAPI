@@ -1,7 +1,9 @@
 package marketplaceserverapi.implementations;
 
+import marketplaceserverapi.CartAction;
 import marketplaceserverapi.models.Cart;
 import marketplaceserverapi.models.OrderItem;
+import marketplaceserverapi.repositories.CartRepository;
 import marketplaceserverapi.services.CartService;
 import marketplaceserverapi.services.OrderItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +12,16 @@ import org.springframework.stereotype.Service;
 
 import java.security.InvalidKeyException;
 import java.security.InvalidParameterException;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Service
 @Qualifier("cartService")
 public class CartServiceImpl implements CartService {
+
+    @Autowired
+    private CartRepository cartRepository;
 
     @Autowired
     @Qualifier("orderItemService")
@@ -24,6 +31,50 @@ public class CartServiceImpl implements CartService {
 
     public CartServiceImpl(OrderItemService orderItemService) {
         this.orderItemService = orderItemService;
+    }
+
+    public synchronized Cart getCartByUserId(int userId) {
+        Cart cart;
+        if (cartRepository.existsByUserId(userId)) {
+            cart = cartRepository.findByUserId(userId).get(0);
+        } else {
+            cart = new Cart(userId);
+        }
+        removeTimedOutCart();
+        return cart;
+    }
+
+    private void removeTimedOutCart() {
+        LocalDateTime now = LocalDateTime.now();
+        for (Cart cart : cartRepository.findAll()) {
+            if (cart.getLastTouched().until(now, ChronoUnit.MINUTES) > 30)
+                cartRepository.deleteByUserId(cart.getUserId());
+        }
+    }
+
+    public Cart dispatchCartAction(String userIdString, CartAction action, int productId, int quantity) throws InvalidKeyException {
+        int userId = Integer.parseInt(userIdString);
+        Cart cart = getCartByUserId(userId);
+        cartRepository.deleteByUserId(userId);
+        switch (action) {
+            case ADD:
+                cart = addToCart(cart, productId, quantity);
+                break;
+            case REMOVE:
+                cart = removeFromCart(cart, productId, quantity);
+                break;
+            case CHECKOUT:
+                cart = checkOutCart(cart);
+                break;
+            case CLEAR:
+                cart.clear();
+                break;
+            default:
+                break;
+        }
+        cartRepository.save(cart);
+        removeTimedOutCart();
+        return cart;
     }
 
     public Cart updateLastTouched(Cart cart) {
@@ -77,7 +128,10 @@ public class CartServiceImpl implements CartService {
         OrderItem orderItem = cart.getOrderItems().get(orderItemIdx);
         int amountToRemove = Math.min(quantity, orderItem.getQuantity());
         int curQuantity = orderItem.getQuantity();
-        orderItem.setQuantity(curQuantity - amountToRemove);
+        int newQuantity = curQuantity - amountToRemove;
+        if (newQuantity == 0) cart.removeOrderItem(orderItem);
+        else orderItem.setQuantity(newQuantity);
+
         recalculateTotal(cart);
         return cart;
     }

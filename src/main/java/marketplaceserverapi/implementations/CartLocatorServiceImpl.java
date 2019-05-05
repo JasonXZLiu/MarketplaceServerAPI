@@ -1,7 +1,9 @@
 package marketplaceserverapi.implementations;
 
 import marketplaceserverapi.models.Cart;
+import marketplaceserverapi.repositories.CartRepository;
 import marketplaceserverapi.services.CartLocatorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -30,38 +32,6 @@ import java.util.Queue;
 @Service
 @Qualifier("cartLocatorService")
 public final class CartLocatorServiceImpl implements CartLocatorService {
-    private static HashMap<String, Cart> userCarts;
-
-    public CartLocatorServiceImpl() throws IOException {
-        if(userCarts == null)
-            userCarts = new HashMap<>();
-    }
-
-    public synchronized Cart getCartByUserId(String userId) {
-        removeTimedOutCart();
-        for (Map.Entry<String, Cart> entry : userCarts.entrySet()) {
-            Cart cart = entry.getValue();
-            if (entry.getKey().equals(userId)) {
-                cart.setLastTouched();
-                return cart;
-            }
-        }
-        Cart cart = new Cart(userId);
-        userCarts.put(userId, cart);
-        return cart;
-    }
-
-    public void removeTimedOutCart() {
-        Queue<String> toRemove = new LinkedList<>();
-        LocalDateTime now = LocalDateTime.now();
-        for (Map.Entry<String, Cart> entry : userCarts.entrySet()) {
-            if (entry.getValue().getLastTouched().until(now, ChronoUnit.MINUTES) > 30)
-                toRemove.add(entry.getKey());
-        }
-        while (!toRemove.isEmpty()) {
-            userCarts.remove(toRemove.poll());
-        }
-    }
 
     /**
      * Attempt to give users (who do not have a unique id) an AnonymousAuthenticationToken

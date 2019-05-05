@@ -1,11 +1,14 @@
 package marketplaceserverapi.services;
 
+import marketplaceserverapi.CartAction;
 import marketplaceserverapi.models.Cart;
 import marketplaceserverapi.models.OrderItem;
 
 import java.security.InvalidKeyException;
 
 public interface CartService {
+
+    Cart dispatchCartAction(String userIdString, CartAction action, int productId, int quantity) throws InvalidKeyException;
 
     Cart updateLastTouched(Cart cart);
 

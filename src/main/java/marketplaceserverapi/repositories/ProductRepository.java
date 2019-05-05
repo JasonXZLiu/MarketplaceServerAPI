@@ -1,7 +1,7 @@
 package marketplaceserverapi.repositories;
 
 import marketplaceserverapi.models.Product;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
@@ -13,8 +13,9 @@ import java.util.List;
  *
  * @author Jason Liu
  */
-public interface ProductRepository extends CrudRepository<Product, Long> {
 
-    List<Product> findById(int productId);
+public interface ProductRepository extends MongoRepository<Product, Integer> {
+
+    List<Product> findByProductId(int productId);
 
 }

@@ -1,16 +1,11 @@
 package marketplaceserverapi.services;
 
-import marketplaceserverapi.implementations.CartLocatorServiceImpl;
 import marketplaceserverapi.repositories.ProductRepository;
-import org.junit.After;
 import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.io.IOException;
-import java.security.InvalidKeyException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -19,11 +14,11 @@ public class CartServiceTest {
     @Autowired
     private ProductRepository productRepository;
 
-    @After
-    public void deleteAddedUser() throws IOException, InvalidKeyException {
-        CartLocatorService cartLocatorService = new CartLocatorServiceImpl();
-        cartLocatorService.getCartByUserId("11").clear();
-    }
+//    @After
+//    public void deleteAddedUser() throws IOException, InvalidKeyException {
+//        CartLocatorService cartLocatorService = new CartLocatorServiceImpl();
+//        cartLocatorService.getCartByUserId("11").clear();
+//    }
 
 //    @Test
 //    public void givenProductTitleAndNumberToAddToCart_whenProductsAreAddedToCart_thenNewCartWithCorrectTotalPriceIsReceived() throws IOException, InvalidKeyException {

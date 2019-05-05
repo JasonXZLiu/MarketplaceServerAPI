@@ -15,11 +15,11 @@ import javax.persistence.*;
  *
  * @author Jason Liu
  */
-@Entity
+
 public class Product {
 
     @Id
-    private int id;
+    private int productId;
     private String title;
     private double price;
     @Column(name = "inventorycount")
@@ -35,11 +35,11 @@ public class Product {
 
     public Product(int id, Product product) {
         this(product.title, product.price, product.inventoryCount);
-        this.id = id;
+        this.productId = productId;
     }
 
     public int getProductId() {
-        return id;
+        return productId;
     }
 
     public String getTitle() {

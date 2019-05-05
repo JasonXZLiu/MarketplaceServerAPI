@@ -1,7 +1,7 @@
 package marketplaceserverapi.controllers;
 
+import marketplaceserverapi.CartAction;
 import marketplaceserverapi.models.Cart;
-import marketplaceserverapi.services.CartLocatorService;
 import marketplaceserverapi.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -32,54 +32,52 @@ import java.security.InvalidParameterException;
 @RestController
 @RequestMapping("/cart")
 public class CartController {
+
+    private final CartAction VIEW = CartAction.VIEW;
+    private final CartAction ADD = CartAction.ADD;
+    private final CartAction REMOVE = CartAction.REMOVE;
+    private final CartAction CLEAR = CartAction.CLEAR;
+    private final CartAction CHECKOUT = CartAction.CHECKOUT;
+
     /** IoC */
     @Autowired
     @Qualifier("cartService")
     public CartService cartService;
 
-    /** IoC */
-    @Autowired
-    @Qualifier("cartLocatorService")
-    public CartLocatorService cartLocatorService;
-
     public CartController() throws IOException, InvalidKeyException { }
-
-    private Cart getCartByUserId(String userId) throws IOException, InvalidKeyException {
-        return cartLocatorService.getCartByUserId(userId);
-    }
 
     @RequestMapping(value = "/u/{userId}/add/{id}", method = RequestMethod.GET)
     public Cart addToCart(@PathVariable("userId") String userId, @PathVariable("id") String productId) throws InvalidKeyException, IOException {
-        return cartService.addToCart(getCartByUserId(userId), Integer.parseInt(productId), 1);
+        return cartService.dispatchCartAction(userId, ADD, Integer.parseInt(productId), 1);
     }
 
     @RequestMapping(value = "/u/{userId}/add/{id}/{quantity}", method = RequestMethod.GET)
     public Cart addToCart(@PathVariable("userId") String userId, @PathVariable("id") String productId, @PathVariable("quantity") String quantity) throws InvalidKeyException, IOException {
-        return cartService.addToCart(getCartByUserId(userId), Integer.parseInt(productId), Integer.parseInt(quantity));
+        return cartService.dispatchCartAction(userId, ADD, Integer.parseInt(productId), Integer.parseInt(quantity));
     }
 
     @RequestMapping(value = "/u/{userId}/remove/{id}", method = RequestMethod.DELETE)
     public Cart removeFromCart(@PathVariable("userId") String userId, @PathVariable("id") String productId) throws InvalidKeyException, IOException {
-        return cartService.removeFromCart(getCartByUserId(userId), Integer.parseInt(productId), 1);
+        return cartService.dispatchCartAction(userId, REMOVE, Integer.parseInt(productId), 1);
     }
 
     @RequestMapping(value = "/u/{userId}/remove/{id}/{quantity}", method = RequestMethod.DELETE)
     public Cart removeFromCart(@PathVariable("userId") String userId, @PathVariable("id") String productId, @PathVariable("quantity") String quantity) throws InvalidKeyException, IOException {
-        return cartService.removeFromCart(getCartByUserId(userId), Integer.parseInt(productId), Integer.parseInt(quantity));
+        return cartService.dispatchCartAction(userId, REMOVE, Integer.parseInt(productId), Integer.parseInt(quantity));
     }
 
     @RequestMapping(value = "/u/{userId}/view", method = RequestMethod.GET)
     public Cart getCart(@PathVariable("userId") String userId) throws IOException, InvalidKeyException {
-        return getCartByUserId(userId);
+        return cartService.dispatchCartAction(userId, VIEW, 0,0);
     }
 
     @RequestMapping(value = "/u/{userId}/clear", method = RequestMethod.DELETE)
     public Cart clearCart(@PathVariable("userId") String userId) throws IOException, InvalidKeyException {
-        return getCartByUserId(userId).clear();
+        return cartService.dispatchCartAction(userId, CLEAR, 0, 0);
     }
 
     @RequestMapping(path = "/u/{userId}/checkout", method = RequestMethod.GET)
     public Cart checkOutProducts(@PathVariable("userId") String userId) throws InvalidParameterException, IOException, InvalidKeyException {
-        return cartService.checkOutCart(getCartByUserId(userId));
+        return cartService.dispatchCartAction(userId, CHECKOUT, 0, 0);
     }
 }

@@ -28,6 +28,7 @@ import java.util.concurrent.ConcurrentMap;
 @Service
 @Qualifier("marketService")
 public class MarketServiceImpl implements MarketService {
+
     @Autowired
     private ProductRepository productRepository;
 
@@ -46,7 +47,7 @@ public class MarketServiceImpl implements MarketService {
     }
 
     public Product getProductById(int productId) throws InvalidKeyException {
-        List<Product> products = productRepository.findById(productId);
+        List<Product> products = productRepository.findByProductId(productId);
         if (products == null || products.size() == 0)  return null;
         return products.get(0);
     }

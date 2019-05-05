@@ -1,10 +1,5 @@
 package marketplaceserverapi.services;
 
-import marketplaceserverapi.models.Cart;
-
-import java.io.IOException;
-import java.security.InvalidKeyException;
-
 /**
  * CartLocatorService is a service to find a user's cart given
  * their userId.
@@ -18,5 +13,5 @@ import java.security.InvalidKeyException;
  * @author Jason Liu
  */
 public interface CartLocatorService {
-    Cart getCartByUserId (String userId) throws IOException, InvalidKeyException;
+
 }
