@@ -17,9 +17,7 @@ Unit tests can be run with the command
 
     mvn test -DskipTests=false
 
-## API Calls
-
-All API calls are returned as JSON objects.
+## API Endpoints
 
 | Call                              | HTTPRequest |  Description               |
 | ----------------                  | ----------- | -------------------------- |
